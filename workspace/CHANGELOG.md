@@ -19,6 +19,9 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 
 <changelog>
 ## 2026-06-07 (latest)
+- ReviewModal 별점 img 클래스 수정: `inline-block mb-4` → `mb-4 w-[74px] h-[17px] object-contain` (Tailwind Preflight max-width:100% 강제 확대 버그 수정)
+- PhotoReviewSection: Link→button 교체, selectedReview state + ReviewModal 컴포넌트 추가
+- ReviewModal: 오버레이 팝업, 다중 이미지 썸네일 + 좌우 전환, ESC 키/배경 클릭 닫기 지원
 - AnnouncementBar: 정적 translate 제거 → marquee keyframes(18s linear infinite) 적용, 아이템 2세트 복제로 seamless loop
 - tailwind.config.js: keyframes.marquee + animation.marquee 추가
 - HeaderActions.tsx: 카트 Link to="/basket" → to="/order/basket" 경로 수정
