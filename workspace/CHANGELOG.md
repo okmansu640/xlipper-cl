@@ -19,6 +19,15 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 
 <changelog>
 ## 2026-06-07 (latest)
+- Header/index.tsx: AnnouncementBar 숨김 조건을 `isLight` → `scrolled`로 변경 → 서브페이지에서도 검은 바 항상 표시
+- Layout.tsx: 서브페이지 콘텐츠를 `<main className="pt-[89px] pb-12">` 래퍼로 감싸 헤더(40px바+49px네비=89px) 높이만큼 상단 여백 확보
+
+- Header/index.tsx: useLocation으로 isHome 감지, isLight = scrolled || !isHome 추가
+- 서브페이지(/product/list 등)에서는 스크롤 전에도 bg-white shadow-md + 검정 텍스트/아이콘 즉시 적용
+- 홈(/)에서는 기존 동작 유지: 최상단=투명+흰 텍스트+AnnouncementBar, 스크롤 시=흰 배경+검정 텍스트
+- useEffect deps에 pathname 추가 → 라우트 변경 시 스크롤 상태 즉시 재평가
+- Navbar에 scrolled={isLight} 전달하여 모든 하위 컴포넌트(로고/아이콘/뱃지) 색상 일괄 처리
+
 - ReviewModal 별점 img 클래스 수정: `inline-block mb-4` → `mb-4 w-[74px] h-[17px] object-contain` (Tailwind Preflight max-width:100% 강제 확대 버그 수정)
 - PhotoReviewSection: Link→button 교체, selectedReview state + ReviewModal 컴포넌트 추가
 - ReviewModal: 오버레이 팝업, 다중 이미지 썸네일 + 좌우 전환, ESC 키/배경 클릭 닫기 지원

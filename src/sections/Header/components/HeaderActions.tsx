@@ -10,7 +10,11 @@ const memberMenuItems = [
   { label: "최근 본 상품", href: "/product/recent" },
 ];
 
-export const HeaderActions = () => {
+interface HeaderActionsProps {
+  scrolled?: boolean;
+}
+
+export const HeaderActions = ({ scrolled = false }: HeaderActionsProps) => {
   const { openSearch } = useSearch();
   const [memberOpen, setMemberOpen] = useState(false);
 
@@ -27,7 +31,9 @@ export const HeaderActions = () => {
             <img
               src="https://c.animaapp.com/mq3f9bhuPsGnIl/assets/icon-3.svg"
               alt="검색"
-              className="box-border caret-transparent text-zinc-900 h-[25px] outline-[3px] no-underline align-baseline w-[25px]"
+              className={`box-border caret-transparent h-[25px] outline-[3px] no-underline align-baseline w-[25px] transition-[filter] duration-300 ${
+                scrolled ? "" : "brightness-0 invert"
+              }`}
             />
           </button>
         </p>
@@ -43,7 +49,9 @@ export const HeaderActions = () => {
           <img
             src="https://c.animaapp.com/mq3f9bhuPsGnIl/assets/icon-4.svg"
             alt="회원"
-            className="box-border caret-transparent h-[25px] outline-[3px] no-underline align-baseline w-[25px]"
+            className={`box-border caret-transparent h-[25px] outline-[3px] no-underline align-baseline w-[25px] transition-[filter] duration-300 ${
+              scrolled ? "" : "brightness-0 invert"
+            }`}
           />
         </p>
 
@@ -80,9 +88,17 @@ export const HeaderActions = () => {
             <img
               src="https://c.animaapp.com/mq3f9bhuPsGnIl/assets/icon-5.svg"
               alt="장바구니"
-              className="box-border caret-transparent text-zinc-900 h-[25px] outline-[3px] no-underline align-baseline w-[25px]"
+              className={`box-border caret-transparent h-[25px] outline-[3px] no-underline align-baseline w-[25px] transition-[filter] duration-300 ${
+                scrolled ? "" : "brightness-0 invert"
+              }`}
             />
-            <span className="bg-zinc-900 box-border caret-transparent text-white block text-[10px] font-semibold h-[15px] leading-[13px] outline-[3px] absolute text-center no-underline w-[15px] border border-zinc-900 rounded-[50%] border-solid right-0 -bottom-1">
+            <span
+              className={`box-border caret-transparent text-white block text-[10px] font-semibold h-[15px] leading-[13px] outline-[3px] absolute text-center no-underline w-[15px] border rounded-[50%] border-solid right-0 -bottom-1 transition-colors duration-300 ${
+                scrolled
+                  ? "bg-zinc-900 border-zinc-900"
+                  : "bg-white border-white text-zinc-900"
+              }`}
+            >
               0
             </span>
           </Link>

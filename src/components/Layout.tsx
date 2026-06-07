@@ -21,7 +21,11 @@ export const Layout = ({ children }: Props) => {
           <Header />
           <SearchDrawer />
           <SideMenu />
-          {isHome ? <MainContent /> : children}
+          {isHome ? (
+            <MainContent />
+          ) : (
+            <main className="pt-[89px] pb-12 min-h-screen">{children}</main>
+          )}
           <Footer />
         </div>
       </SearchProvider>

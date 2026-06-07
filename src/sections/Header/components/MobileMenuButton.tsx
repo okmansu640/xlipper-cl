@@ -1,6 +1,12 @@
 import { useMenu } from "@/context/MenuContext";
 
-export const MobileMenuButton = () => {
+interface MobileMenuButtonProps {
+  scrolled?: boolean;
+}
+
+export const MobileMenuButton = ({
+  scrolled = false,
+}: MobileMenuButtonProps) => {
   const { open } = useMenu();
   return (
     <div className="caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
@@ -13,7 +19,9 @@ export const MobileMenuButton = () => {
           <img
             src="https://c.animaapp.com/mq3f9bhuPsGnIl/assets/icon-2.svg"
             alt="Icon"
-            className="box-border caret-transparent text-zinc-900 h-[25px] outline-[3px] no-underline align-baseline w-[25px]"
+            className={`box-border caret-transparent h-[25px] outline-[3px] no-underline align-baseline w-[25px] transition-[filter] duration-300 ${
+              scrolled ? "" : "brightness-0 invert"
+            }`}
           />
         </button>
       </div>
