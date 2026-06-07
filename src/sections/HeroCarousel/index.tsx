@@ -37,7 +37,10 @@ export const HeroCarousel = () => {
 
   return (
     <section className="caret-transparent outline-[3px] no-underline relative overflow-hidden">
-      <div className="relative h-[400px] md:h-[433px] overflow-hidden">
+      <div
+        className="relative h-[56vw] md:h-[calc(100vw*650/1920)] overflow-hidden"
+        style={{ minHeight: "400px", maxHeight: "650px" }}
+      >
         {/* Slides */}
         {slidesData.map((s, i) => (
           <div

@@ -19,9 +19,9 @@ export const CompactProductCard = (props: CompactProductCardProps) => {
     <li
       role="group"
       aria-label={props.ariaLabel}
-      className="caret-transparent text-neutral-500 block shrink-0 h-full list-none min-h-[auto] min-w-[auto] outline-[3px] relative no-underline align-top w-[135.2px] mr-3 mb-0 md:h-[104.667px] md:w-full md:mr-0 md:mb-3"
+      className="caret-transparent text-neutral-500 block shrink-0 h-full list-none min-h-[auto] min-w-[auto] outline-[3px] relative no-underline align-top w-[135.2px] mr-3 mb-0 md:h-[128px] md:w-full md:mr-0 md:mb-3"
     >
-      <div className="caret-transparent gap-x-3 flex flex-col h-full outline-[3px] gap-y-3 no-underline md:gap-x-6 md:flex-row md:h-[104.667px] md:gap-y-6">
+      <div className="caret-transparent gap-x-3 flex flex-col h-full outline-[3px] gap-y-3 no-underline md:gap-x-6 md:flex-row md:h-[128px] md:gap-y-6">
         <div className="aspect-square caret-transparent min-h-[auto] min-w-[auto] outline-[3px] relative text-center no-underline">
           <div className="aspect-square caret-transparent outline-[3px] no-underline">
             <a

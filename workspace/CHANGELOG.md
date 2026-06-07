@@ -19,6 +19,24 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 
 <changelog>
 ## 2026-06-07 (latest)
+- FeaturedVideoProductsSection: 우측 세로 라인(스크롤바 트랙 `bg-white md:absolute md:w-px`) 제거
+
+- FeaturedVideoProductsSection: 우측 컬럼 `height:0; minHeight:100%` 트릭으로 그리드 stretch 높이 정확히 상속 → overflow-y-auto가 비디오 높이 내 스크롤 정상 동작
+- FeaturedVideoProductsSection: col-start-8 div에 `flex flex-col` + 내부 래퍼 `flex-1 min-h-0` 추가 → `overflow-y-auto`가 flex child로 올바르게 제한되어 비디오 높이 내 스크롤 정상 작동
+- FeaturedVideoProductsSection: 아이템 컨테이너에서 `md:aspect-video` 제거 → 부모에 `self-stretch` + 래퍼에 `h-full` 적용 → 우측 패널이 비디오 높이와 동일하게 맞춰지고 overflow-y-auto 스크롤 작동
+- FeaturedVideoProductsSection: 아이템 컨테이너 `md:h-auto` 제거(aspect-video 무효화 방지), `overflow-hidden` → `overflow-y-auto` 변경 → 아이템 영역이 영상 높이와 동일하게 맞춰지고 초과 아이템 스크롤 작동
+
+- FeaturedVideoProductsSection: 영상 컬럼 `col-end-7` → `col-end-8`, 아이템 패널 `col-start-7` → `col-start-8` (50/50 → 7/5 비율)
+- CompactProductCard: 카드/내부 래퍼 높이 `md:h-[104.667px]` → `md:h-[128px]` — 아이템 이미지·텍스트 영역 확장
+- 스크롤바 인디케이터 높이 `md:h-[162.613px]` → `md:h-[195px]` — 새 패널 높이에 맞게 재산출
+
+- HeroCarousel: `h-[400px] md:h-[433px]` → `h-[56vw] md:h-[calc(100vw*650/1920)]` (min 400px, max 650px) — 이미지 원본 비율(1920×650) 반응형 높이
+- FeaturedVideoProductsSection: 상품 목록 컨테이너 `md:h-[337.5px]` → `md:aspect-video md:h-auto` — 영상과 동일한 16:9 비율로 높이 자동 확장
+
+- PromoPopup.tsx: 정적 HTML 스냅샷을 React 상태 기반 슬라이더로 완전 재구현
+- slides[] 배열(4개), currentIndex state, 4초 setInterval 자동 전환, 이전/다음 버튼, 하단 dots 추가
+- 기존 isOpen + localStorage "오늘 하루 열지 않기" 로직 유지
+
 - Header/index.tsx: AnnouncementBar 숨김 조건을 `isLight` → `scrolled`로 변경 → 서브페이지에서도 검은 바 항상 표시
 - Layout.tsx: 서브페이지 콘텐츠를 `<main className="pt-[89px] pb-12">` 래퍼로 감싸 헤더(40px바+49px네비=89px) 높이만큼 상단 여백 확보
 

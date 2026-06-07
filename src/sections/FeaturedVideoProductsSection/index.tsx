@@ -7,7 +7,7 @@ export const FeaturedVideoProductsSection = () => {
         <div className="box-border caret-transparent max-w-full outline-[3px] no-underline w-[1600px] mx-auto px-[9.375px] md:px-8">
           <div className="caret-transparent outline-[3px] no-underline">
             <div className="caret-transparent gap-x-6 flex flex-col grid-cols-[repeat(12,1fr)] outline-[3px] gap-y-6 no-underline md:gap-x-4 md:grid md:flex-row md:gap-y-4">
-              <div className="aspect-video caret-transparent col-end-7 col-start-1 min-h-[auto] min-w-[auto] outline-[3px] no-underline overflow-hidden rounded-xl">
+              <div className="aspect-video caret-transparent col-end-8 col-start-1 min-h-[auto] min-w-[auto] outline-[3px] no-underline overflow-hidden rounded-xl">
                 <div className="caret-transparent h-full outline-[3px] no-underline">
                   <div className="caret-transparent h-full outline-[3px] no-underline">
                     <iframe
@@ -21,9 +21,12 @@ export const FeaturedVideoProductsSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="caret-transparent col-end-13 col-start-7 min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                <div className="caret-transparent outline-[3px] no-underline">
-                  <div className="caret-transparent h-auto list-none outline-[3px] relative no-underline z-[1] overflow-hidden mx-auto pr-0 md:h-[337.5px] md:pr-3">
+              <div
+                className="caret-transparent col-end-13 col-start-8 min-w-[auto] outline-[3px] no-underline"
+                style={{ height: 0, minHeight: "100%" }}
+              >
+                <div className="h-full w-full">
+                  <div className="caret-transparent h-full list-none outline-[3px] relative no-underline z-[1] overflow-y-auto mx-auto pr-0 md:pr-3">
                     <ul className="caret-transparent flex flex-row text-[0px] h-full leading-[0px] list-disc outline-[3px] relative text-left no-underline w-full z-[1] pl-0 md:grid md:flex-col">
                       <CompactProductCard
                         ariaLabel="1 / 6"
@@ -137,9 +140,6 @@ export const FeaturedVideoProductsSection = () => {
                         alt="Icon"
                         className="box-border caret-transparent text-zinc-900 block h-5 object-contain outline-[3px] no-underline align-baseline w-5 md:inline"
                       />
-                    </div>
-                    <div className="bg-white caret-transparent h-px outline-[3px] relative no-underline w-[98%] z-50 mt-[42px] rounded-[10px] right-auto top-auto md:h-[98%] md:absolute md:w-px md:mt-0 md:right-1 md:top-[1%]">
-                      <div className="bg-zinc-900 caret-transparent h-full outline-[3px] relative no-underline w-[142.612px] rounded-[10px] left-0 top-0 md:h-[162.613px] md:w-full"></div>
                     </div>
                   </div>
                 </div>
