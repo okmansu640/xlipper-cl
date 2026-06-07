@@ -19,6 +19,11 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 
 <changelog>
 ## 2026-06-07 (latest)
+- AnnouncementBar: 정적 translate 제거 → marquee keyframes(18s linear infinite) 적용, 아이템 2세트 복제로 seamless loop
+- tailwind.config.js: keyframes.marquee + animation.marquee 추가
+- HeaderActions.tsx: 카트 Link to="/basket" → to="/order/basket" 경로 수정
+
+## 2026-06-07
 - SearchContext 신규 생성 (src/context/SearchContext.tsx): isSearchOpen / openSearch / closeSearch
 - Layout.tsx: SearchProvider로 전체 감싸기
 - SearchDrawer.tsx: useSearch() 연결, isSearchOpen 기반 right 토글 + 백드롭 + 닫기 버튼 onClick 추가

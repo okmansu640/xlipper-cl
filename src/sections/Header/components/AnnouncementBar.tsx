@@ -1,3 +1,12 @@
+const items = [
+  "가장 편안한 순간을 공유하세요. 100% 당첨",
+  "11시 이전 결제시 오늘 출발!",
+  "가장 편안한 순간을 공유하세요. 100% 당첨",
+  "11시 이전 결제시 오늘 출발!",
+];
+
+const allItems = [...items, ...items];
+
 export const AnnouncementBar = () => {
   return (
     <section className="caret-transparent h-10 outline-[3px] no-underline w-full overflow-hidden">
@@ -11,71 +20,20 @@ export const AnnouncementBar = () => {
             />
           </div>
           <div className="caret-transparent h-10 outline-[3px] relative no-underline overflow-hidden">
-            <div className="caret-transparent flex h-10 outline-[3px] no-underline text-nowrap translate-x-[-630.5px] md:translate-x-[-469px]">
-              <div className="caret-transparent text-xs h-10 min-h-[auto] min-w-[auto] outline-[3px] no-underline text-nowrap">
-                <a
-                  href=""
-                  className="items-center bg-zinc-900 caret-transparent text-white flex text-xs h-10 justify-center outline-[3px] no-underline text-nowrap w-full px-5 md:text-sm md:px-10"
+            <div className="caret-transparent flex h-10 outline-[3px] no-underline text-nowrap animate-marquee">
+              {allItems.map((text, i) => (
+                <div
+                  key={i}
+                  className="caret-transparent text-xs h-10 min-h-[auto] min-w-[auto] outline-[3px] no-underline text-nowrap"
                 >
-                  가장 편안한 순간을 공유하세요. 100% 당첨{" "}
-                </a>
-              </div>
-              <div className="caret-transparent text-xs h-10 min-h-[auto] min-w-[auto] outline-[3px] no-underline text-nowrap">
-                <a
-                  href=""
-                  className="items-center bg-zinc-900 caret-transparent text-white flex text-xs h-10 justify-center outline-[3px] no-underline text-nowrap w-full px-5 md:text-sm md:px-10"
-                >
-                  11시 이전 결제시 오늘 출발!
-                </a>
-              </div>
-              <div className="caret-transparent text-xs h-10 min-h-[auto] min-w-[auto] outline-[3px] no-underline text-nowrap">
-                <a
-                  href=""
-                  className="items-center bg-zinc-900 caret-transparent text-white flex text-xs h-10 justify-center outline-[3px] no-underline text-nowrap w-full px-5 md:text-sm md:px-10"
-                >
-                  가장 편안한 순간을 공유하세요. 100% 당첨{" "}
-                </a>
-              </div>
-              <div className="caret-transparent text-xs h-10 min-h-[auto] min-w-[auto] outline-[3px] no-underline text-nowrap">
-                <a
-                  href=""
-                  className="items-center bg-zinc-900 caret-transparent text-white flex text-xs h-10 justify-center outline-[3px] no-underline text-nowrap w-full px-5 md:text-sm md:px-10"
-                >
-                  11시 이전 결제시 오늘 출발!
-                </a>
-              </div>
-              <div className="caret-transparent text-xs h-10 min-h-[auto] min-w-[auto] outline-[3px] no-underline text-nowrap">
-                <a
-                  href=""
-                  className="items-center bg-zinc-900 caret-transparent text-white flex text-xs h-10 justify-center outline-[3px] no-underline text-nowrap w-full px-5 md:text-sm md:px-10"
-                >
-                  가장 편안한 순간을 공유하세요. 100% 당첨{" "}
-                </a>
-              </div>
-              <div className="caret-transparent text-xs h-10 min-h-[auto] min-w-[auto] outline-[3px] no-underline text-nowrap">
-                <a
-                  href=""
-                  className="items-center bg-zinc-900 caret-transparent text-white flex text-xs h-10 justify-center outline-[3px] no-underline text-nowrap w-full px-5 md:text-sm md:px-10"
-                >
-                  11시 이전 결제시 오늘 출발!
-                </a>
-              </div>
-              <div className="caret-transparent text-xs h-10 min-h-[auto] min-w-[auto] outline-[3px] no-underline text-nowrap">
-                <a
-                  href=""
-                  className="items-center bg-zinc-900 caret-transparent text-white flex text-xs h-10 justify-center outline-[3px] no-underline text-nowrap w-full px-5 md:text-sm md:px-10"
-                >
-                  가장 편안한 순간을 공유하세요. 100% 당첨{" "}
-                </a>
-              </div>
-              <div className="caret-transparent text-xs h-10 min-h-[auto] min-w-[auto] outline-[3px] no-underline text-nowrap">
-                <a
-                  href=""
-                  className="items-center bg-zinc-900 caret-transparent text-white flex text-xs h-10 justify-center outline-[3px] no-underline text-nowrap w-full px-5 md:text-sm md:px-10"
-                >
-                  11시 이전 결제시 오늘 출발!
-                </a>
-              </div>
+                  <a
+                    href=""
+                    className="items-center bg-zinc-900 caret-transparent text-white flex text-xs h-10 justify-center outline-[3px] no-underline text-nowrap w-full px-5 md:text-sm md:px-10"
+                  >
+                    {text}
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
         </div>

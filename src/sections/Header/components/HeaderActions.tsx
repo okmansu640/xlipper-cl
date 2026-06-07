@@ -74,7 +74,7 @@ export const HeaderActions = () => {
       <div className="items-center caret-transparent flex h-[43.9844px] min-h-[auto] min-w-[auto] outline-[3px] relative no-underline md:h-[48.9844px]">
         <p className="caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
           <Link
-            to="/basket"
+            to="/order/basket"
             className="items-center caret-transparent flex outline-[3px] relative no-underline"
           >
             <img
